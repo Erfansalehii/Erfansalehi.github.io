@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+---
+
+<article class="project-card reveal">
+  <div class:list={['project-visual', `accent-${project.data.accent}`]} aria-hidden="true">
+    <span class="visual-orbit"></span>
+    <span class="visual-grid"></span>
+    <span class="visual-number">{String(project.id.charCodeAt(0) % 9 + 1).padStart(2, '0')}</span>
+  </div>
+  <div class="project-content">
+    <div class="card-kicker"><span>{project.data.status}</span><span class="rule"></span></div>
+    <h2>{project.data.title}</h2>
+    <p>{project.data.description}</p>
+    <ul class="tag-list" aria-label="Technologies">
+      {project.data.tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+    {(project.data.demo || project.data.repository) && (
+      <div class="card-links">
+        {project.data.demo && <a href={project.data.demo} target="_blank" rel="noreferrer">Live demo <Icon name="external" size={16} /></a>}
+        {project.data.repository && <a href={project.data.repository} target="_blank" rel="noreferrer">Source <Icon name="external" size={16} /></a>}
+      </div>
+    )}
+  </div>
+</article>

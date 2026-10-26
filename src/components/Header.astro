@@ -1,0 +1,66 @@
+---
+import Icon from './Icon.astro';
+import { navigation, siteConfig, withBase } from '../site-config';
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+  const resolved = withBase(href);
+  return href === '/' ? currentPath === resolved : currentPath.startsWith(resolved);
+};
+---
+
+<header class="site-header" data-header>
+  <div class="container nav-wrap">
+    <a class="brand" href={withBase('/')} aria-label={`${siteConfig.name} home`}>
+      <span class="brand-mark" aria-hidden="true">YN</span>
+      <span>{siteConfig.name}</span>
+    </a>
+
+    <button class="icon-button menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation" data-menu-button>
+      <Icon name="menu" />
+    </button>
+
+    <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation" data-menu>
+      {navigation.map((item) => (
+        <a href={withBase(item.href)} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+
+    <button class="icon-button theme-button" type="button" aria-label="Switch color theme" data-theme-button>
+      <span class="theme-icon theme-icon-moon"><Icon name="moon" /></span>
+      <span class="theme-icon theme-icon-sun"><Icon name="sun" /></span>
+    </button>
+  </div>
+</header>
+
+<script is:inline>
+  const initHeader = () => {
+    const button = document.querySelector('[data-menu-button]');
+    const menu = document.querySelector('[data-menu]');
+    if (button && menu && !button.dataset.ready) {
+      button.dataset.ready = 'true';
+      button.addEventListener('click', () => {
+        const open = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!open));
+        menu.toggleAttribute('data-open', !open);
+      });
+      menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        button.setAttribute('aria-expanded', 'false');
+        menu.removeAttribute('data-open');
+      }));
+    }
+
+    const themeButton = document.querySelector('[data-theme-button]');
+    if (themeButton && !themeButton.dataset.ready) {
+      themeButton.dataset.ready = 'true';
+      themeButton.addEventListener('click', () => {
+        const current = document.documentElement.dataset.theme;
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('portfolio-theme', next);
+      });
+    }
+  };
+  initHeader();
+  document.addEventListener('astro:after-swap', initHeader);
+</script>

@@ -1,0 +1,28 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../site-config';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+interface Props { post: CollectionEntry<'posts'> }
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.description} type="article">
+  <header class="article-header container reveal">
+    <a class="back-link" href={withBase('/blog/')}>← Back to all posts</a>
+    <p class="eyebrow">Article</p>
+    <h1>{post.data.title}</h1>
+    <div class="article-meta">
+      <time datetime={post.data.publishedAt.toISOString()}>Published {post.data.publishedAt.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+      {post.data.updatedAt && <time datetime={post.data.updatedAt.toISOString()}>Updated {post.data.updatedAt.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })}</time>}
+      <span>{post.data.tags.join(' · ')}</span>
+    </div>
+  </header>
+  <article class="article-body prose container reveal"><Content /></article>
+</BaseLayout>

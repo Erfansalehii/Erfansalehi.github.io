@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { withBase } from '../site-config';
+---
+
+<BaseLayout title="Page not found" description="The requested page could not be found.">
+  <section class="page-hero container">
+    <p class="eyebrow">404</p>
+    <h1>That page drifted out of orbit.</h1>
+    <p class="lede">The link may be outdated, or the page may have moved.</p>
+    <a class="button" style="margin-top: 2rem" href={withBase('/')}>Return home <Icon name="arrow" /></a>
+  </section>
+</BaseLayout>

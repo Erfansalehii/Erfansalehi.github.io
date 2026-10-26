@@ -1,0 +1,26 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import { siteConfig } from '../site-config';
+const page = await getEntry('pages', 'contact');
+if (!page) throw new Error('Missing contact content');
+const { Content } = await render(page);
+---
+
+<BaseLayout title={page.data.title} description={page.data.description}>
+  <PageHero {...page.data} />
+  <section class="section-tight container contact-grid">
+    <article class="contact-panel reveal">
+      <h2>Start a conversation</h2>
+      <p>Choose the channel that works best. Add your public email or additional social profiles before publishing.</p>
+      <ul class="contact-list">
+        {siteConfig.email && <li><a href={`mailto:${siteConfig.email}`}><Icon name="mail" /> {siteConfig.email}</a></li>}
+        {siteConfig.socialLinks.map((link) => <li><a href={link.href} target="_blank" rel="noreferrer"><Icon name="external" /> {link.label}</a></li>)}
+      </ul>
+      {!siteConfig.email && <p class="placeholder-note">No email address has been invented. Add yours in <code>src/site-config.ts</code> when you are ready.</p>}
+    </article>
+    <article class="contact-panel prose reveal"><Content /></article>
+  </section>
+</BaseLayout>

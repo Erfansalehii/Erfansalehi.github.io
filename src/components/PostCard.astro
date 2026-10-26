@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { withBase } from '../site-config';
+interface Props { post: CollectionEntry<'posts'> }
+const { post } = Astro.props;
+---
+
+<article class="post-card reveal">
+  <div class="post-meta">
+    <time datetime={post.data.publishedAt.toISOString()}>{post.data.publishedAt.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+    <span>{post.data.tags[0] ?? 'Article'}</span>
+  </div>
+  <h2><a href={withBase(`/blog/${post.id}/`)}>{post.data.title}</a></h2>
+  <p>{post.data.description}</p>
+  <a class="text-link" href={withBase(`/blog/${post.id}/`)}>Read article <Icon name="arrow" size={17} /></a>
+</article>

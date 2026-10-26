@@ -1,0 +1,26 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+const page = await getEntry('pages', 'certificates');
+if (!page) throw new Error('Missing certificates page content');
+const certificates = await getCollection('certificates');
+---
+
+<BaseLayout title={page.data.title} description={page.data.description}>
+  <PageHero {...page.data} />
+  <section class="section-tight container">
+    <div class="certificate-grid">
+      {certificates.map((certificate) => (
+        <article class="certificate-card reveal">
+          <span class="certificate-seal"><Icon name="spark" /></span>
+          <h2>{certificate.data.title}</h2>
+          <p>{certificate.data.issuer}{certificate.data.issuedAt ? ` · ${certificate.data.issuedAt.getFullYear()}` : ''}</p>
+          <ul class="tag-list">{certificate.data.skills.map((skill) => <li>{skill}</li>)}</ul>
+          {certificate.data.credentialUrl && <a class="text-link" style="margin-top: 1rem" href={certificate.data.credentialUrl} target="_blank" rel="noreferrer">View credential <Icon name="external" size={16} /></a>}
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erfansalehii.github.io/Erfansalehi.github.io/sitemap.xml
