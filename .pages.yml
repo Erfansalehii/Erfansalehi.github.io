@@ -1,6 +1,6 @@
 media:
   input: public/uploads
-  output: /Erfansalehi.github.io/uploads
+  output: /uploads
   categories: [image, document]
   extensions: [jpg, jpeg, png, webp, gif, svg, pdf]
   rename: safe
