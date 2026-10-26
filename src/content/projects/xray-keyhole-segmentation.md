@@ -1,7 +1,8 @@
 ---
-title: AI-Based Keyhole Segmentation in X-ray Images .
+title: AI-Based Keyhole Segmentation in X-ray Images ...
 description: An end-to-end computer-vision pipeline for segmenting and
-  geometrically analyzing welding keyholes in noisy, low-contrast X-ray imagery.
+  geometrically analyzing welding keyholes in noisy, low-contrast X-ray
+  imagery...
 status: Master's research · Computer vision
 tags:
   - Deep Learning
