@@ -39,7 +39,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft))
   <section class="section container">
     <div class="section-heading reveal">
       <div><span class="section-label">Selected work</span><h2>Projects with purpose and polish.</h2></div>
-      <p>Replace these starter entries with real case studies. Every project is managed through a Markdown file.</p>
+      <p>Research and data-science projects connecting machine learning with real engineering and decision-making challenges.</p>
     </div>
     <div class="project-grid">
       {projects.map((project) => <ProjectCard project={project} />)}
@@ -54,7 +54,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft))
         <dl>
           <div><dt>Role</dt><dd>{siteConfig.role}</dd></div>
           <div><dt>Based in</dt><dd>{siteConfig.location}</dd></div>
-          <div><dt>Focus</dt><dd>Add your focus area</dd></div>
+          <div><dt>Focus</dt><dd>Computer vision & applied AI</dd></div>
         </dl>
       </aside>
     </div>
@@ -72,7 +72,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft))
     <div class="cta reveal">
       <span class="section-label">Let’s connect</span>
       <h2>Have an interesting problem to solve?</h2>
-      <p>Add your preferred contact details, then invite collaborators, clients, or employers to get in touch.</p>
+      <p>Connect with me to discuss applied AI, computer vision, data science, MLOps, or intelligent manufacturing.</p>
       <a class="button" href={withBase('/contact/')}>Contact me <Icon name="arrow" /></a>
     </div>
   </section>

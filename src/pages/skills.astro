@@ -2,14 +2,11 @@
 import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import skillsData from '../data/skills.json';
 const page = await getEntry('pages', 'skills');
 if (!page) throw new Error('Missing skills content');
 const { Content } = await render(page);
-const groups = [
-  { title: 'Core expertise', text: 'Describe the capabilities you rely on most.', items: ['Skill one', 'Skill two', 'Skill three'] },
-  { title: 'Tools & technology', text: 'List the tools that support your best work.', items: ['Tool one', 'Tool two', 'Tool three'] },
-  { title: 'Ways of working', text: 'Show how you collaborate and deliver.', items: ['Practice one', 'Practice two', 'Practice three'] },
-];
+const groups = skillsData.skillGroups;
 ---
 
 <BaseLayout title={page.data.title} description={page.data.description}>
@@ -19,7 +16,7 @@ const groups = [
       {groups.map((group, index) => (
         <article class="skill-card reveal">
           <span class="skill-index">0{index + 1}</span>
-          <h2>{group.title}</h2><p>{group.text}</p>
+          <h2>{group.title}</h2><p>{group.description}</p>
           <ul>{group.items.map((item) => <li>{item}</li>)}</ul>
         </article>
       ))}

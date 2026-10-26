@@ -1,19 +1,26 @@
 ---
-title: More than a résumé.
+title: AI research grounded in engineering.
 eyebrow: About
-description: Add the story, values, and perspective behind your work—without turning the page into a list of job titles.
+description: AI Engineer and Data Scientist applying machine learning, computer vision, and data systems to research and real-world engineering challenges.
 ---
 
-## Your story belongs here
+## About me
 
-Write a concise introduction in your own voice. You might explain the problems you enjoy solving, the path that brought you to your field, or what you care about when you collaborate with others.
+I am an AI Engineer and Data Scientist based in Cottbus, Germany. My work combines machine learning, deep learning, computer vision, NLP, data analysis, and visualization, with a particular interest in applying AI to manufacturing and scientific research.
 
-## How you approach the work
+I currently work as an Artificial Intelligence Researcher at **SpreeTec neXt**. Previously, I worked as a Student Assistant in Machine Learning at **Brandenburg University of Technology Cottbus-Senftenberg**, where my responsibilities included database implementation, data visualization and analysis, and machine-learning models for prediction. Earlier, I worked as a contract Data Scientist at **Saee Power — Hamrah Team Department**, developing machine-learning solutions, deep-learning applications, visual analysis, and database integrations.
 
-Describe your working principles. Focus on genuine habits such as curiosity, clear communication, iteration, research, craft, or attention to detail.
+## Research focus
 
-## What comes next
+My master’s research focused on developing and validating an AI-based algorithm for segmentation and geometric analysis of keyholes in low-contrast X-ray images of laser beam welding. The work covered the complete pipeline from model development and training to prediction, segmentation, and geometric analysis.
 
-Share the kinds of projects, roles, or conversations you would welcome. Keep this section specific enough to help the right people recognize a fit.
+I also work on AI-assisted process optimization for Wire Arc Additive Manufacturing, including anomaly detection in weld geometry and optimization of process parameters for stable layer dimensions.
 
-> Replace every placeholder statement with truthful information before publishing your portfolio publicly.
+## Education
+
+- **M.Sc. Artificial Intelligence**, Brandenburg University of Technology Cottbus-Senftenberg, 2022–2025
+- **B.Sc. Computer Science**, Shiraz University of Technology, 2011–2016
+
+## How I work
+
+I enjoy taking ownership of the full analytical pipeline: understanding the physical or business problem, preparing data carefully, selecting an appropriate validation strategy, building models, evaluating their limitations, and communicating results through clear visualizations.

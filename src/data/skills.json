@@ -1,0 +1,19 @@
+{
+  "skillGroups": [
+    {
+      "title": "AI & machine learning",
+      "description": "Developing and validating models for prediction, segmentation, and applied research.",
+      "items": ["Machine Learning", "Deep Learning", "Artificial Neural Networks", "Computer Vision", "NLP"]
+    },
+    {
+      "title": "Data & engineering",
+      "description": "Turning complex datasets into reliable analysis, visual explanations, and deployable workflows.",
+      "items": ["Python", "Scikit-learn", "Data Preparation", "Data Analysis", "ETL / ELT", "Databases"]
+    },
+    {
+      "title": "MLOps & visualization",
+      "description": "Supporting reproducible model development, monitoring, delivery, and communication.",
+      "items": ["MLflow", "DVC", "Docker", "CI / CD", "Great Expectations", "Tableau", "Matplotlib", "Seaborn"]
+    }
+  ]
+}

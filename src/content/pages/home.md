@@ -1,11 +1,11 @@
 ---
 title: Home
 eyebrow: Portfolio
-description: A modern portfolio starter designed for real work, thoughtful writing, and simple Markdown updates.
+description: AI engineering, data science, and applied research spanning computer vision, deep learning, MLOps, and intelligent manufacturing.
 ---
 
-## A clear home for your work
+## Building AI systems for complex, physical problems
 
-This portfolio is ready for your real story. Replace the placeholder copy with a short introduction that explains what you do, how you think, and what makes your approach distinctive.
+I work across the full machine-learning lifecycle—from preparing data and developing models to validation, visualization, deployment, and monitoring. My recent work connects AI with advanced manufacturing, including computer-vision analysis of laser welding and process optimization for Wire Arc Additive Manufacturing.
 
-The site intentionally avoids made-up credentials, employers, results, and personal details. Every claim should come from you.
+I am especially interested in problems where reliable data and thoughtful modeling can make complex engineering processes easier to understand and control.

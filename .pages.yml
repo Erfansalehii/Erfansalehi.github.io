@@ -47,6 +47,25 @@ content:
       - { name: description, label: SEO description, type: text, required: true }
       - { name: body, label: Page content, type: rich-text }
 
+  - name: skills
+    label: Skill groups
+    description: Edit the skill cards shown on the Skills page.
+    type: file
+    path: src/data/skills.json
+    format: json
+    fields:
+      - name: skillGroups
+        label: Skill groups
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: title, label: Group title, type: string, required: true }
+          - { name: description, label: Description, type: text, required: true }
+          - { name: items, label: Skills, type: string, list: true }
+
   - name: posts
     label: Blog posts
     type: collection

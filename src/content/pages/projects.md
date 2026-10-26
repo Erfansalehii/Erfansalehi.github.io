@@ -1,5 +1,5 @@
 ---
-title: Work worth exploring.
+title: Applied AI projects.
 eyebrow: Projects
-description: A flexible gallery for case studies, experiments, open-source work, and products you are proud to discuss.
+description: Research and engineering projects in computer vision, intelligent manufacturing, predictive modeling, and data science.
 ---

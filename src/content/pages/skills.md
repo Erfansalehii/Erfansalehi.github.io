@@ -1,13 +1,13 @@
 ---
-title: Skills with context.
+title: AI skills applied end to end.
 eyebrow: Capabilities
-description: Present the things you can do, the tools you use, and how those capabilities create value.
+description: Machine learning, computer vision, data engineering, visualization, and MLOps capabilities supported by applied research and project work.
 ---
 
-## Make this section credible
+## From experimentation to reliable delivery
 
-Replace the cards above with your real skills. Group them by capability rather than filling the page with every tool you have ever opened.
+My experience covers model development as well as the surrounding systems needed to make ML work reproducible: data preparation, experiment tracking, versioning, data-quality checks, containerization, CI/CD, deployment concepts, and model monitoring.
 
-## Add proof
+## Applied domains
 
-Connect important skills to projects, articles, or certificates elsewhere on the site. Evidence makes a stronger impression than a long list of keywords.
+Recent applications include low-contrast X-ray image segmentation, geometric analysis of laser-welding keyholes, additive-manufacturing process optimization, loan-status prediction, and disease-prediction experiments.

@@ -14,12 +14,12 @@ const { Content } = await render(page);
   <section class="section-tight container contact-grid">
     <article class="contact-panel reveal">
       <h2>Start a conversation</h2>
-      <p>Choose the channel that works best. Add your public email or additional social profiles before publishing.</p>
+      <p>Choose one of my public professional profiles. A public email address can be added later if needed.</p>
       <ul class="contact-list">
         {siteConfig.email && <li><a href={`mailto:${siteConfig.email}`}><Icon name="mail" /> {siteConfig.email}</a></li>}
         {siteConfig.socialLinks.map((link) => <li><a href={link.href} target="_blank" rel="noreferrer"><Icon name="external" /> {link.label}</a></li>)}
       </ul>
-      {!siteConfig.email && <p class="placeholder-note">No email address has been invented. Add yours in <code>src/site-config.ts</code> when you are ready.</p>}
+      {!siteConfig.email && <p class="placeholder-note">No public email address was included in the provided profile export, so contact is currently available through LinkedIn and GitHub.</p>}
     </article>
     <article class="contact-panel prose reveal"><Content /></article>
   </section>

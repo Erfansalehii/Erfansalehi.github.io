@@ -1,11 +1,11 @@
 {
-  "name": "Your Name",
-  "initials": "YN",
-  "role": "Your professional title",
-  "location": "Your location",
+  "name": "Erfan Salehi",
+  "initials": "ES",
+  "role": "AI Engineer & Data Scientist",
+  "location": "Cottbus, Germany",
   "email": "",
-  "availability": "Open to thoughtful opportunities",
-  "description": "A concise statement about the work you do, the people you help, and the value you create.",
+  "availability": "Applied AI for real-world engineering",
+  "description": "AI Engineer and Data Scientist working across machine learning, deep learning, computer vision, NLP, and data-driven manufacturing systems.",
   "socialLinks": [
     {
       "label": "GitHub",

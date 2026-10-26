@@ -1,5 +1,5 @@
 ---
-title: Learning, documented.
+title: Continuous learning, documented.
 eyebrow: Certificates
-description: Add verified certificates and courses here only when you are ready to share the real details.
+description: Verified training that complements applied experience in AI, data science, visualization, and machine-learning engineering.
 ---

@@ -1,15 +1,11 @@
 ---
-title: Let’s talk about what’s next.
+title: Let’s connect.
 eyebrow: Contact
-description: A simple, accessible contact page that keeps you in control of which public details you share.
+description: Connect with Erfan Salehi to discuss applied AI, computer vision, data science, and intelligent manufacturing.
 ---
 
-## Before publishing
+## Areas of interest
 
-Add only the contact channels you want to make public. The starter does not use a third-party form service, so there are no paid dependencies and no visitor data is sent elsewhere.
+I welcome conversations about applied machine learning, AI research, computer vision, MLOps, data science, and the use of intelligent systems in advanced manufacturing.
 
-You can ask your AI portfolio manager to:
-
-- “Add my public email address.”
-- “Add my LinkedIn profile.”
-- “Change my availability message.”
+LinkedIn and GitHub are currently the best public channels to reach me. A public email address can be added later if needed.

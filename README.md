@@ -15,7 +15,7 @@ Run `npm run build` before opening a pull request. The production output is gene
 
 ## Personalize the site
 
-Start with `src/site-config.ts` for your name, title, location, public email, availability, and social links. The placeholder initials in `src/components/Header.astro` and `src/components/Footer.astro` can be changed after you set your name.
+Start with `src/data/profile.json` for the name, title, location, public email, availability, initials, and social links. Skill cards are stored in `src/data/skills.json`.
 
 Most content is Markdown:
 
@@ -45,7 +45,7 @@ The portfolio never stores a username or password. GitHub controls authenticatio
 
 ## Publish with GitHub Pages
 
-1. Review and commit these starter files to the `main` branch.
+1. Review and commit the website files to the `main` branch.
 2. On GitHub, open **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 4. Open the **Actions** tab and confirm the “Build and deploy portfolio” workflow succeeds.
