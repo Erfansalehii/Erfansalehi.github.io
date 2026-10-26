@@ -1,0 +1,108 @@
+media:
+  input: public/uploads
+  output: /Erfansalehi.github.io/uploads
+  categories: [image, document]
+  extensions: [jpg, jpeg, png, webp, gif, svg, pdf]
+  rename: safe
+
+content:
+  - name: profile
+    label: Profile and social links
+    description: Edit the identity, contact details, and links used across the website.
+    type: file
+    path: src/data/profile.json
+    format: json
+    fields:
+      - { name: name, label: Full name, type: string, required: true }
+      - { name: initials, label: Initials, type: string, required: true }
+      - { name: role, label: Professional title, type: string, required: true }
+      - { name: location, label: Location, type: string }
+      - { name: email, label: Public email, type: string }
+      - { name: availability, label: Availability message, type: string }
+      - { name: description, label: Short introduction, type: text, required: true }
+      - name: socialLinks
+        label: Social links
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - { name: label, label: Network name, type: string, required: true }
+          - { name: href, label: Full URL, type: string, required: true }
+
+  - name: pages
+    label: Main pages
+    type: collection
+    path: src/content/pages
+    operations:
+      create: false
+      rename: false
+      delete: false
+    view:
+      fields: [title, eyebrow]
+    fields:
+      - { name: title, label: Page title, type: string, required: true }
+      - { name: eyebrow, label: Small heading, type: string, required: true }
+      - { name: description, label: SEO description, type: text, required: true }
+      - { name: body, label: Page content, type: rich-text }
+
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: src/content/posts
+    view:
+      fields: [title, publishedAt, draft]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Summary, type: text, required: true }
+      - { name: publishedAt, label: Publication date, type: date, required: true }
+      - { name: updatedAt, label: Updated date, type: date }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: featured, label: Featured, type: boolean, default: false }
+      - { name: draft, label: Keep as draft, type: boolean, default: true }
+      - { name: body, label: Article, type: rich-text }
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    view:
+      fields: [title, status, featured]
+    fields:
+      - { name: title, label: Project name, type: string, required: true }
+      - { name: description, label: Short summary, type: text, required: true }
+      - { name: status, label: Status or category, type: string, default: Project }
+      - { name: tags, label: Technologies and skills, type: string, list: true }
+      - { name: featured, label: Show on homepage, type: boolean, default: false }
+      - name: accent
+        label: Card accent
+        type: select
+        default: violet
+        options:
+          values: [violet, cyan, coral, lime]
+      - { name: image, label: Main project image, type: image }
+      - { name: gallery, label: Gallery images, type: image, list: true }
+      - { name: repository, label: Repository URL, type: string }
+      - { name: demo, label: Live demo URL, type: string }
+      - { name: body, label: Full case study, type: rich-text }
+
+  - name: certificates
+    label: Certificates
+    type: collection
+    path: src/content/certificates
+    view:
+      fields: [title, issuer, issuedAt]
+    fields:
+      - { name: title, label: Certificate title, type: string, required: true }
+      - { name: issuer, label: Issuing organization, type: string, required: true }
+      - { name: issuedAt, label: Issue date, type: date }
+      - { name: skills, label: Skills, type: string, list: true }
+      - { name: image, label: Certificate preview image, type: image }
+      - { name: document, label: Certificate PDF, type: file }
+      - { name: credentialUrl, label: Verification URL, type: string }
+      - { name: body, label: Notes, type: rich-text }
+
+settings:
+  hide: true
+  config: false

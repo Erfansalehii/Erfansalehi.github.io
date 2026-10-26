@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   description = siteConfig.description,
   image = '/favicon.svg',
   type = 'website',
+  noindex = false,
 } = Astro.props;
 const fullTitle = title === siteConfig.name ? title : `${title} — ${siteConfig.name}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -36,6 +38,7 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content="#0b1020" />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <link rel="canonical" href={canonical} />

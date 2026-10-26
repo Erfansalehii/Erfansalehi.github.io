@@ -1,15 +1,6 @@
-export const siteConfig = {
-  name: 'Your Name',
-  role: 'Your professional title',
-  location: 'Your location',
-  email: '',
-  availability: 'Open to thoughtful opportunities',
-  description:
-    'A concise statement about the work you do, the people you help, and the value you create.',
-  socialLinks: [
-    { label: 'GitHub', href: 'https://github.com/Erfansalehii' },
-  ],
-};
+import profile from './data/profile.json';
+
+export const siteConfig = profile;
 
 export const navigation = [
   { label: 'Home', href: '/' },

@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { withBase } from '../site-config';
+
+const cmsUrl = 'https://app.pagescms.org/Erfansalehii/Erfansalehi.github.io/main';
+const repoUrl = 'https://github.com/Erfansalehii/Erfansalehi.github.io';
+const tools = [
+  { title: 'Profile & links', text: 'Update your name, title, location, email, LinkedIn, Instagram, and other public links.' },
+  { title: 'Projects', text: 'Create project cards, choose featured work, add links, technologies, screenshots, and case studies.' },
+  { title: 'Certificates', text: 'Upload a preview image or PDF and add issuer, date, skills, and verification details.' },
+  { title: 'Blog', text: 'Write with a rich-text editor, keep posts as drafts, and publish when they are ready.' },
+  { title: 'Main pages', text: 'Edit the Home, About, Skills, Projects, Blog, Certificates, and Contact page copy.' },
+  { title: 'Media library', text: 'Upload optimized images and PDF documents for use throughout the portfolio.' },
+];
+---
+
+<BaseLayout title="Portfolio admin" description="Secure content management for the portfolio." noindex={true}>
+  <section class="page-hero container reveal">
+    <p class="eyebrow">Content manager</p>
+    <h1>Manage your portfolio.</h1>
+    <p class="lede">Sign in securely with GitHub to edit content and upload media. No portfolio password is stored in this public website.</p>
+    <div class="hero-actions">
+      <a class="button" href={cmsUrl} target="_blank" rel="noreferrer">Open secure admin <Icon name="external" /></a>
+      <a class="button button-secondary" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
+    </div>
+  </section>
+
+  <section class="section-tight container">
+    <div class="admin-notice reveal">
+      <strong>First login:</strong>
+      <span>Choose “Sign in with GitHub,” authorize Pages CMS, select this repository, and use the <code>main</code> branch. GitHub—not this website—protects your credentials.</span>
+    </div>
+    <div class="admin-grid">
+      {tools.map((tool, index) => (
+        <article class="admin-card reveal"><span>0{index + 1}</span><h2>{tool.title}</h2><p>{tool.text}</p></article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="cta reveal">
+      <span class="section-label">Publishing workflow</span>
+      <h2>Save, wait for the build, then refresh.</h2>
+      <p>Each admin save creates a GitHub commit. The deployment normally takes about one minute. Follow the build in GitHub Actions, then refresh your public website.</p>
+      <a class="button" href={withBase('/')} target="_blank">Open public website <Icon name="arrow" /></a>
+    </div>
+  </section>
+</BaseLayout>

@@ -37,6 +37,12 @@ Examples of future requests:
 
 For each request, review the local build summary or pull-request preview before merging. Merging to `main` triggers the deployment workflow.
 
+## Browser-based admin
+
+Visit `/admin/` on the published site and choose **Open secure admin**. The editor uses the hosted, open-source [Pages CMS](https://pagescms.org), authenticates through GitHub, and reads `.pages.yml` from this repository. It can edit profile details, social links, page copy, blog posts, projects, certificates, images, and PDFs.
+
+The portfolio never stores a username or password. GitHub controls authentication and repository permissions. Every CMS save creates a commit on `main`; GitHub Actions then rebuilds and deploys the website.
+
 ## Publish with GitHub Pages
 
 1. Review and commit these starter files to the `main` branch.

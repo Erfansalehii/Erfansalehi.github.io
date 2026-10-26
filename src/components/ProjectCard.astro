@@ -7,11 +7,17 @@ const { project } = Astro.props;
 ---
 
 <article class="project-card reveal">
-  <div class:list={['project-visual', `accent-${project.data.accent}`]} aria-hidden="true">
-    <span class="visual-orbit"></span>
-    <span class="visual-grid"></span>
-    <span class="visual-number">{String(project.id.charCodeAt(0) % 9 + 1).padStart(2, '0')}</span>
-  </div>
+  {project.data.image ? (
+    <div class="project-visual project-image-wrap">
+      <img class="project-image" src={project.data.image} alt={`Preview of ${project.data.title}`} loading="lazy" />
+    </div>
+  ) : (
+    <div class:list={['project-visual', `accent-${project.data.accent}`]} aria-hidden="true">
+      <span class="visual-orbit"></span>
+      <span class="visual-grid"></span>
+      <span class="visual-number">{String(project.id.charCodeAt(0) % 9 + 1).padStart(2, '0')}</span>
+    </div>
+  )}
   <div class="project-content">
     <div class="card-kicker"><span>{project.data.status}</span><span class="rule"></span></div>
     <h2>{project.data.title}</h2>

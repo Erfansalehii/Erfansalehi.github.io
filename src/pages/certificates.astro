@@ -14,11 +14,20 @@ const certificates = await getCollection('certificates');
     <div class="certificate-grid">
       {certificates.map((certificate) => (
         <article class="certificate-card reveal">
-          <span class="certificate-seal"><Icon name="spark" /></span>
-          <h2>{certificate.data.title}</h2>
-          <p>{certificate.data.issuer}{certificate.data.issuedAt ? ` · ${certificate.data.issuedAt.getFullYear()}` : ''}</p>
-          <ul class="tag-list">{certificate.data.skills.map((skill) => <li>{skill}</li>)}</ul>
-          {certificate.data.credentialUrl && <a class="text-link" style="margin-top: 1rem" href={certificate.data.credentialUrl} target="_blank" rel="noreferrer">View credential <Icon name="external" size={16} /></a>}
+          {certificate.data.image ? (
+            <img class="certificate-image" src={certificate.data.image} alt={`${certificate.data.title} certificate`} loading="lazy" />
+          ) : (
+            <span class="certificate-seal"><Icon name="spark" /></span>
+          )}
+          <div class="certificate-copy">
+            <h2>{certificate.data.title}</h2>
+            <p>{certificate.data.issuer}{certificate.data.issuedAt ? ` · ${certificate.data.issuedAt.getFullYear()}` : ''}</p>
+            <ul class="tag-list">{certificate.data.skills.map((skill) => <li>{skill}</li>)}</ul>
+            <div class="card-links">
+              {certificate.data.credentialUrl && <a href={certificate.data.credentialUrl} target="_blank" rel="noreferrer">Verify online <Icon name="external" size={16} /></a>}
+              {certificate.data.document && <a href={certificate.data.document} target="_blank" rel="noreferrer">View document <Icon name="external" size={16} /></a>}
+            </div>
+          </div>
         </article>
       ))}
     </div>
